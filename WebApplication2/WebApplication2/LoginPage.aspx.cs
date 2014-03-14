@@ -22,7 +22,7 @@ namespace WebApplication2
            
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["team01Database"].ConnectionString);
             conn.Open();
-            string checkuser = "select count(*) from [User] where UserName ='" + DropDownListUsers.SelectedValue + "'";
+            string checkuser = "select count(*) from [Users] where UserName ='" + DropDownListUsers.SelectedValue + "'";
 
             
             System.Diagnostics.Debug.WriteLine(DropDownListUsers.SelectedValue);
@@ -31,7 +31,7 @@ namespace WebApplication2
             conn.Close();
             if (temp == 1) {
                 conn.Open();
-                string checkPasswordQuery = "select password from [User] where UserName ='" + DropDownListUsers.SelectedValue + "'";
+                string checkPasswordQuery = "select password from [Users] where UserName ='" + DropDownListUsers.SelectedValue + "'";
                 SqlCommand passComm = new SqlCommand(checkPasswordQuery, conn);
                 string password = passComm.ExecuteScalar().ToString();
                if (password == TextBoxPassword.Text){

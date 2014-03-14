@@ -272,7 +272,7 @@
                 <td>
                     <asp:DropDownList ID="DropDownListUsers" runat="server" DataSourceID="Team01Data" DataTextField="UserName" DataValueField="UserName" Width="180px">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="Team01Data" runat="server" ConnectionString="<%$ ConnectionStrings:team01Database %>" SelectCommand="SELECT [UserName] FROM [User]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="Team01Data" runat="server" ConnectionString="<%$ ConnectionStrings:team01Database %>" SelectCommand="SELECT [UserName] FROM [Users]"></asp:SqlDataSource>
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -288,7 +288,7 @@
                 <td class="auto-style3">&nbsp;</td>
                 <td>
                     <asp:Button ID="ButtonLogin" runat="server" OnClick="ButtonLogin_Click" Text="Login" />
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:team01Database %>" ProviderName="<%$ ConnectionStrings:team01Database.ProviderName %>" SelectCommand="SELECT [User].* FROM [User]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:team01Database %>" ProviderName="<%$ ConnectionStrings:team01Database.ProviderName %>" SelectCommand="SELECT [User].* FROM [Users]"></asp:SqlDataSource>
                 </td>
                 <td>&nbsp;</td>
             </tr>
