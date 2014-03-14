@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AutoCompleteModules.asmx" />
     <Content Include="ModuleManagement.aspx" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
@@ -81,6 +82,10 @@
     <Content Include="EditModules.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoCompleteModules.asmx.cs">
+      <DependentUpon>AutoCompleteModules.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LoginPage.aspx.cs">
       <DependentUpon>LoginPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

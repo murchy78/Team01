@@ -77,9 +77,13 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
-    <script>
-        $(function () {
-            var availableTags = [
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SearchText();
+        });
+
+        function SearchText() {
+            /*var availableTags = [
               "ActionScript",
               "AppleScript",
               "Asp",
@@ -102,11 +106,26 @@
               "Ruby",
               "Scala",
               "Scheme"
-            ];
+
+            ];*/
             $("#tags").autocomplete({
-                source: availableTags
+                source: /*availableTags*/ function (request, response) {
+                    $.ajax({
+                        type: "POST",
+                        contentType: "application/json; charset=utf8",
+                        url: "AutoCompleteModules.asmx/GetAutoCompleteModules",
+                        data: "{'modName':'" + document.getElementById('tags').value + "'}",
+                        dataType: "json",
+                        success: function (data) {
+                            response(data.d);
+                        },
+                        error: function (result) {
+                            alert("Error");
+                        }
+                    });
+                }
             });
-        });
+        };
   </script>
 </head>
 <body>
