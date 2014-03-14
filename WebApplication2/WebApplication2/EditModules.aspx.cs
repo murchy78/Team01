@@ -15,7 +15,7 @@ namespace WebApplication2
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["team01Database"].ConnectionString);
             conn.Open();
-            string count_mods = "SELECT COUNT(*) FROM [dbo].[team01.ModuleManagement];";
+            string count_mods = "SELECT COUNT(*) FROM dbo.ModuleManagement;";
             SqlCommand com = new SqlCommand(count_mods, conn);
             int row_count = (int) com.ExecuteScalar();
             conn.Close();
@@ -52,7 +52,7 @@ namespace WebApplication2
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["team01Database"].ConnectionString);
             conn.Open();
-            string add_module = "INSERT INTO [dbo].[team01.ModuleManagement] ([ModuleCode],[ModuleTitle]) VALUES ('" + TextBox_ModCode.Text + "', '" + TextBox_ModTitle.Text + "');";
+            string add_module = "INSERT INTO dbo.ModuleManagement ([ModuleCode],[ModuleTitle]) VALUES ('" + TextBox_ModCode.Text + "', '" + TextBox_ModTitle.Text + "');";
             SqlCommand com = new SqlCommand(add_module, conn);
             com.ExecuteScalar();
             conn.Close();

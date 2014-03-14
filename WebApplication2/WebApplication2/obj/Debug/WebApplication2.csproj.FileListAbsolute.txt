@@ -34,3 +34,9 @@ C:\Users\Ranvir\Documents\2nd YEar\TEAM 01\WebApplication2\WebApplication2\bin\W
 C:\Users\Ranvir\Documents\2nd YEar\TEAM 01\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
 C:\Users\Ranvir\Documents\2nd YEar\TEAM 01\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
 C:\Users\Ranvir\Documents\2nd YEar\TEAM 01\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\Dhanesh\Documents\GitHub\Team01\WebApplication2\WebApplication2\bin\WebApplication2.dll.config
+C:\Users\Dhanesh\Documents\GitHub\Team01\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\Dhanesh\Documents\GitHub\Team01\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\Dhanesh\Documents\GitHub\Team01\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
+C:\Users\Dhanesh\Documents\GitHub\Team01\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\Dhanesh\Documents\GitHub\Team01\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb

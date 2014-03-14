@@ -21,9 +21,18 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:team01Database %>"
-            DeleteCommand="DELETE FROM dbo.[team01.ModuleManagement] WHERE ModuleID = @ModuleID" 
-            SelectCommand="SELECT dbo.[team01.ModuleManagement].* FROM dbo.[team01.ModuleManagement]" 
-            UpdateCommand="UPDATE dbo.[team01.ModuleManagement] SET ModuleCode = @ModuleCode, ModuleTitle = @ModuleTitle WHERE ModuleID = @ModuleID"></asp:SqlDataSource>
+            DeleteCommand="DELETE FROM dbo.ModuleManagement WHERE ModuleID = @ModuleID" 
+            SelectCommand="SELECT dbo.ModuleManagement.* FROM dbo.ModuleManagement" 
+            UpdateCommand="UPDATE dbo.ModuleManagement SET ModuleCode = @ModuleCode, ModuleTitle = @ModuleTitle WHERE ModuleID = @ModuleID">
+            <DeleteParameters>
+                <asp:Parameter Name="ModuleID" />
+            </DeleteParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="ModuleCode" />
+                <asp:Parameter Name="ModuleTitle" />
+                <asp:Parameter Name="ModuleID" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>
