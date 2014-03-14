@@ -110,23 +110,30 @@
   </script>
 </head>
 <body>
+    <form id="form1" runat="server">
      <div id="logo">
            <img src="Images/logo.png" id="logoimg">
       </div>
-    <form id="form1" runat="server">
 <div id='cssmenu'>
-<ul>
-   <li><a href='#'><span>Create Request</span></a></li>
-   <li><a href='#'><span>View Request</span></a><div style="text-align: center; height: 379px; width: 724px; z-index: 1; left: 234px; top: 130px; position: absolute">
+
+
+    <asp:BulletedList ID="bullet" runat="server" DisplayMode="LinkButton"
+    onclick="bullet_Click">
+    <asp:ListItem Text="One" Value="1">Create Request</asp:ListItem>
+</asp:BulletedList>
+    <asp:BulletedList ID="BulletedList2" runat="server" DisplayMode="LinkButton"
+    onclick="bullet_Click2">
+    <asp:ListItem Text="One" Value="1">Module Management</asp:ListItem>
+</asp:BulletedList>
+
+  
+  <div style="text-align: center; height: 379px; width: 724px; z-index: 1; left: 234px; top: 130px; position: absolute">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     
         </asp:ContentPlaceHolder>
     </div>
-    </li>
-   <li><a href='#'><span>Module Management</span></a></li>
-   <li><a href='#'><span>Settings</span></a></li>
-   <li><a href='#'><span>Help</span></a></li>
-</ul>
+    
+  
 </div>
     </form>
 </body>

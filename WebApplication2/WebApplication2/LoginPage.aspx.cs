@@ -31,13 +31,13 @@ namespace WebApplication2
             conn.Close();
             if (temp == 1) {
                 conn.Open();
-                string checkPasswordQuery = "select password from [Users] where UserName ='" + DropDownListUsers.SelectedValue + "'";
+                string checkPasswordQuery = "select Password from [Users] where UserName ='" + DropDownListUsers.SelectedValue + "'";
                 SqlCommand passComm = new SqlCommand(checkPasswordQuery, conn);
                 string password = passComm.ExecuteScalar().ToString();
                if (password == TextBoxPassword.Text){
                    Session["New"] = DropDownListUsers.SelectedValue;
                     Response.Write("Password Correct");
-                    Response.Redirect("RequestPage.aspx");
+                    Response.Redirect("CreateRequest.aspx");
                
                }
                else{

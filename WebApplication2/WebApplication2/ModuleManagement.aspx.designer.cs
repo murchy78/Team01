@@ -10,51 +10,51 @@
 namespace WebApplication2 {
     
     
-    public partial class Site1 {
+    public partial class ModuleManagement {
         
         /// <summary>
-        /// head control.
+        /// TextBox_ModCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_ModCode;
         
         /// <summary>
-        /// form1 control.
+        /// TextBox_ModTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_ModTitle;
         
         /// <summary>
-        /// bullet control.
+        /// AddMod control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList bullet;
+        protected global::System.Web.UI.WebControls.Button AddMod;
         
         /// <summary>
-        /// BulletedList2 control.
+        /// GridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedList2;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

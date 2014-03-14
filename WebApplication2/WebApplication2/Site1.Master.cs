@@ -13,5 +13,16 @@ namespace WebApplication2
         {
 
         }
+
+        protected void bullet_Click(object sender, BulletedListEventArgs e)
+        {
+            Response.Redirect("CreateRequest.aspx");
+        }
+
+        protected void bullet_Click2(object sender, BulletedListEventArgs e)
+        {
+            Response.Redirect("ModuleManagement.aspx");
+        }
+
     }
 }
