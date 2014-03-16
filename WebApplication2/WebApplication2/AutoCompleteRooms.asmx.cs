@@ -26,12 +26,15 @@ namespace WebApplication2
             return "Hello World";
         }
          [WebMethod]
-        public List<string> GetAutoCompleteRooms(string modName)
+        public List<string> GetAutoCompleteRooms(string modName, string MinCapacity)
         {
+
+          
              List<string> result = new List<string>();
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["team01Database"].ConnectionString);
             conn.Open();
-            string request = "SELECT * FROM dbo.Rooms inner join dbo.Buildings on dbo.Rooms.BuildingID = dbo.Buildings.BuildingID WHERE RoomCode LIKE '%'+@SearchText+'%' OR BuildingName LIKE '%'+@SearchText+'%'  ;";
+            string request = "SELECT * FROM dbo.Rooms inner join dbo.Buildings on dbo.Rooms.BuildingID = dbo.Buildings.BuildingID WHERE (RoomCode LIKE '%'+@SearchText+'%' OR BuildingName LIKE '%'+@SearchText+'%') AND Capacity > " +MinCapacity+" ;";
+   
             SqlCommand com = new SqlCommand(request, conn);
 
             com.Parameters.AddWithValue("@SearchText", modName);

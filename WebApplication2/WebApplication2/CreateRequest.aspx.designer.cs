@@ -31,13 +31,13 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Table SearchTable;
         
         /// <summary>
-        /// TextBox1 control.
+        /// MinCapacity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox MinCapacity;
         
         /// <summary>
         /// FacilitiesTable control.
