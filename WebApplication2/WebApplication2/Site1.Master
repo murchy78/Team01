@@ -164,7 +164,7 @@
                         type: "POST",
                         contentType: "application/json; charset=utf8",
                         url: "AutoCompleteRooms.asmx/GetAutoCompleteRooms",
-                        data: "{'modName':'" + document.getElementById('tags1').value + "', 'MinCapacity' :'"+ $("#MinCapacity").val() + "'}",
+                        data: "{'modName':'" + document.getElementById('tags1').value + "', 'MinCapacity':'" + Number($(".MinCapacity").val()) + "'}",
                         dataType: "json",
                         success: function (data) {
                             response(data.d);

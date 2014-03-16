@@ -21,7 +21,7 @@
         <asp:TableRow height="100px"><asp:TableCell CssClass="display-cell"> <label for="tags">Tags: </label>
   <input id="tags"/> </asp:TableCell>
             
-            <asp:TableCell CssClass="display-cell"><asp:TextBox placeholder="Enter Minimum Capacity" ID="MinCapacity" runat="server"></asp:TextBox></asp:TableCell>
+            <asp:TableCell CssClass="display-cell"><asp:TextBox placeholder="Enter Minimum Capacity" ID="MinCapacity" class="MinCapacity" runat="server"></asp:TextBox></asp:TableCell>
 
         </asp:TableRow>
         </asp:Table>
