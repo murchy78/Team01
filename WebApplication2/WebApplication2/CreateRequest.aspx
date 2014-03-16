@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-   <link href="CreateRequestStyle.css" rel="stylesheet" type="text/css" />
+    <link href="CreateRequestStyle.css" rel="stylesheet" type="text/css" />
   <div class="title">
           <h1>Create Request Page</h1>
 
@@ -77,7 +77,7 @@
                     <asp:TableCell CssClass="sub-heading">Selected Results</asp:TableCell>
                    </asp:TableRow>
                 <asp:TableRow Height="100px">
-                    <asp:TableCell><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></asp:TableCell>
+                    <asp:TableCell><label for="tags">Tags: </label>  <input id="tags1"/></asp:TableCell>
                     <asp:TableCell>   
                         <asp:Button ID="Button1" runat="server" CssClass="button" Width="120px" Text="Add Room" />
                         <br />
