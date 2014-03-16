@@ -34,7 +34,7 @@ namespace WebApplication2
             List<string> result = new List<string>();
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["team01Database"].ConnectionString);
             conn.Open();
-            string request = "SELECT * FROM dbo.ModuleManagement WHERE ModuleCode LIKE '%'+@SearchText+'%' OR ModuleTitle LIKE '%'+@SearchText+'%';";
+            string request = "SELECT * FROM dbo.ModuleManagement WHERE ModuleTitle LIKE '%'+@SearchText+'%';";
             SqlCommand com = new SqlCommand(request, conn);
 
             com.Parameters.AddWithValue("@SearchText", modName);
@@ -43,7 +43,7 @@ namespace WebApplication2
 
             while (ModuleList.Read())
             {
-                result.Add(ModuleList["ModuleCode"].ToString() + " - " + ModuleList["ModuleTitle"].ToString());
+                result.Add(ModuleList["ModuleTitle"].ToString());
             }
             return result;
         }

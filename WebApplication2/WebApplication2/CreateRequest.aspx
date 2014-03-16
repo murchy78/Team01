@@ -8,8 +8,7 @@
    <link href="CreateRequestStyle.css" rel="stylesheet" type="text/css" />
   <div class="title">
           <h1>Create Request Page</h1>
-    <label for="tags">Tags: </label>
-  <input id="tags"/> 
+
       </div>
 <div class="container">
 <asp:Panel cssclass="panel" ID="Panel1" runat="server" >
@@ -19,7 +18,8 @@
             <asp:TableCell>Module Search</asp:TableCell>
             <asp:TableCell>Room Capacity</asp:TableCell>
         </asp:TableRow>
-        <asp:TableRow height="100px"><asp:TableCell CssClass="display-cell"><asp:TextBox ID="TextBox2" runat="server" ></asp:TextBox></asp:TableCell>
+        <asp:TableRow height="100px"><asp:TableCell CssClass="display-cell"> <label for="tags">Tags: </label>
+  <input id="tags"/> </asp:TableCell>
             
             <asp:TableCell CssClass="display-cell"><asp:TextBox placeholder="Enter Minimum Capacity" ID="TextBox1" runat="server"></asp:TextBox></asp:TableCell>
 
@@ -78,21 +78,25 @@
                    </asp:TableRow>
                 <asp:TableRow Height="100px">
                     <asp:TableCell><asp:TextBox ID="TextBox4" runat="server"></asp:TextBox></asp:TableCell>
-                    <asp:TableCell>Insert Here</asp:TableCell>
-                    <asp:TableCell>Insert Here</asp:TableCell>
+                    <asp:TableCell>   
+                        <asp:Button ID="Button1" runat="server" CssClass="button" Width="120px" Text="Add Room" />
+                        <br />
+                           <asp:Button ID="Button2" runat="server" CssClass="button" Width="120px" Text="Remove Room" />
+                         </asp:TableCell>
+                      
+                        
+
+                   
+                    
                 </asp:TableRow>
 
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Button ID="Button1" runat="server" CssClass="button" Text="Left" />
-                  
-                        <asp:Button ID="Button2" runat="server" CssClass="button" Text="Right" />
+                     
                     </asp:TableCell>
                     
                     <asp:TableCell>
-                    <asp:Button ID="Button5" runat="server" CssClass="button" Text="Add Selected" />
-                    <asp:Button ID="Button6" runat="server" CssClass="button" Text="Clear Selected" />
-                    <asp:Button ID="Button7" runat="server" CssClass="button" Text="Clear All" />
+                
                     </asp:TableCell>
                     <asp:TableCell></asp:TableCell>
                 </asp:TableRow>
