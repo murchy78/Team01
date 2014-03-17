@@ -36,12 +36,14 @@
                     
                    
                     <asp:TableCell >
-                        <asp:CheckBox ID="west" CssClass="no-border" Text="West" runat="server" />
+                        West<input id="west" type="checkbox" />
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="central" CssClass="no-border" Text="Central" runat="server" /></asp:TableCell>
+                        Central<input id="central" type="checkbox" />
+                    </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="east" CssClass="no-border" Text="East" runat="server" /></asp:TableCell>
+                        East<input id="east" type="checkbox" />
+                    </asp:TableCell>
                      <asp:TableCell CssClass="no-border"></asp:TableCell>
                     <asp:TableCell></asp:TableCell>
                 </asp:TableRow>

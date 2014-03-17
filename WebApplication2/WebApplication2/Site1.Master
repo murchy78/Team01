@@ -159,12 +159,54 @@
             $("#tags1").autocomplete({
                 source: /*availableTags*/ function (request, response) {
                    
+                    var west = $("#west").is(":checked");
+                    var central = $("#central").is(":checked");
+                    var east = $("#east").is(":checked");
+                 
+                    var parks = [];
+
+                    if (west == true) {
+                        parks.push(1);
+                    };
+
+                    if (central == true) {
+                        parks.push(2);
+                    };
+
+                    if (east == true) {
+                        parks.push(3);
+                    };
                     
+                    if (parks.length == 0) {
+                        parks.push(1);
+                        parks.push(2);
+                        parks.push(3);
+                    };
+
+                    var park1 = "";
+                    var park2 = "";
+                    var park3 = "";
+
+                    switch (parks.length) {
+                        case 1:
+                            park1 = parks[0];
+                            break;
+                        case 2:
+                            park1 = parks[0];
+                            park2 = parks[1];
+                            break;
+                        case 3:
+                            park1 = parks[0];
+                            park2 = parks[1];
+                            park3 = parks[2];
+                            break;
+                    };
+
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf8",
                         url: "AutoCompleteRooms.asmx/GetAutoCompleteRooms",
-                        data: "{'modName':'" + document.getElementById('tags1').value + "', 'MinCapacity':'" + Number($(".MinCapacity").val()) + "'}",
+                        data: "{'modName':'" + document.getElementById('tags1').value + "', 'MinCapacity':'" + Number($(".MinCapacity").val()) + "', 'park1':'" + Number(park1) + "', 'park2':'" + Number(park2) + "', 'park3':'" + Number(park3) + "'}",
                         dataType: "json",
                         success: function (data) {
                             response(data.d);

@@ -49,33 +49,6 @@ namespace WebApplication2 {
         protected global::System.Web.UI.WebControls.Table FacilitiesTable;
         
         /// <summary>
-        /// west control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox west;
-        
-        /// <summary>
-        /// central control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox central;
-        
-        /// <summary>
-        /// east control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox east;
-        
-        /// <summary>
         /// CheckBoxOHP control.
         /// </summary>
         /// <remarks>
