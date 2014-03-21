@@ -30,45 +30,54 @@
             <br />
             <asp:Table ID="FacilitiesTable" GridLines="Both" CssClass="table" runat="server">
                 
-                <asp:TableRow CssClass="sub-heading"><asp:TableCell ColumnSpan="5">Park</asp:TableCell>
+                <asp:TableRow CssClass="sub-heading"><asp:TableCell ColumnSpan="6">Park</asp:TableCell>
                     </asp:TableRow>
                 <asp:TableRow>
                     
                    
                     <asp:TableCell >
-                        West<input id="west" type="checkbox" />
+                        <input id="west" type="checkbox" />West
                     </asp:TableCell>
                     <asp:TableCell>
-                        Central<input id="central" type="checkbox" />
+                        <input id="central" type="checkbox" />Central
                     </asp:TableCell>
                     <asp:TableCell>
-                        East<input id="east" type="checkbox" />
+                        <input id="east" type="checkbox" />East
                     </asp:TableCell>
                      <asp:TableCell CssClass="no-border"></asp:TableCell>
                     <asp:TableCell></asp:TableCell>
                 </asp:TableRow>
 
-                <asp:TableRow CssClass="sub-heading"><asp:TableCell ColumnSpan="5">Facilities</asp:TableCell></asp:TableRow>
+                <asp:TableRow CssClass="sub-heading"><asp:TableCell ColumnSpan="6">Facilities</asp:TableCell></asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>
-
-                        <asp:CheckBox ID="CheckBoxOHP" Text="OHP/Simultaneous Board" runat="server" />
+                        <input id="cbOHP" type="checkbox" />
+                        OHP/Simultaneuos Board 
                         </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="CheckBoxDP" Text="Data Projector" runat="server" /></asp:TableCell>
+                        <input id="cbDP" type="checkbox" />
+                        Data Projector
+                        </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="CheckBoxDP2" Text="Data Projector x2" runat="server" /></asp:TableCell>
+                        <input id="cbDP2" type="checkbox" />
+                        Data Projector X2
+                        </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="CheckBoxCH" Text="Chalk" runat="server" /></asp:TableCell>
+                        <input id="cbCH" type="checkbox" />
+                        Chalk
+                    </asp:TableCell>
                     <asp:TableCell>
-                        <asp:CheckBox ID="CheckBoxWB" Text="White Board" runat="server" /></asp:TableCell>
+                        <input id="cbWB" type="checkbox" />
+                        White Board
+                        </asp:TableCell>
                      </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxLB" Text="Large Board" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxL" Text="Lecture" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxT" Text="Tiered" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxF" Text="Flat" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxWC" Text="Wheelchair" runat="server" /></asp:TableCell>
+                    <asp:TableCell><input id="cbLB" type="checkbox" />Large Board</asp:TableCell>
+                    <asp:TableCell><input id="cbL" type="checkbox" />Lecture</asp:TableCell>
+                    <asp:TableCell><input id="cbS" type="checkbox" />Seminar</asp:TableCell>
+                    <asp:TableCell><input id="cbT" type="checkbox" />Tiered</asp:TableCell>
+                    <asp:TableCell><input id="cbF" type="checkbox" />Flat</asp:TableCell>
+                    <asp:TableCell><input id="cbWC" type="checkbox" />Wheelchair</asp:TableCell>
 
                </asp:TableRow>
                 

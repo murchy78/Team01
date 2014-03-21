@@ -43,7 +43,7 @@ namespace WebApplication2
 
             while (ModuleList.Read())
             {
-                result.Add(ModuleList["ModuleCode"].ToString() + " - " + ModuleList["ModuleTitle"].ToString());
+                result.Add(ModuleList["ModuleCode"].ToString().Trim() + " - " + ModuleList["ModuleTitle"].ToString().Trim());
             }
             return result;
         }

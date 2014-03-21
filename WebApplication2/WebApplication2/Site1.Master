@@ -156,6 +156,8 @@
 
             ];*/
           
+            var NoResultsText = "No Results Found";
+
             $("#tags1").autocomplete({
                 source: /*availableTags*/ function (request, response) {
                    
@@ -202,21 +204,162 @@
                             break;
                     };
 
+                    var checkedOHP = $("#cbOHP").is(":checked");
+                    var checkedDP = $("#cbDP").is(":checked");
+                    var checkedDP2 = $("#cbDP2").is(":checked");
+                    var checkedCH = $("#cbCH").is(":checked");
+                    var checkedWB = $("#cbWB").is(":checked");
+                    var checkedLB = $("#cbLB").is(":checked");
+                    var checkedL = $("#cbL").is(":checked");
+                    var checkedS = $("#cbS").is(":checked");
+                    var checkedT = $("#cbT").is(":checked");
+                    var checkedF = $("#cbF").is(":checked");
+                    var checkedWC = $("#cbWC").is(":checked");
+
+                    var OHP = "";
+                    var DP = "";
+                    var DP2 = "";
+                    var CH = "";
+                    var WB = "";
+                    var LB = "";
+                    var L = "";
+                    var S = "";
+                    var T = "";
+                    var F = "";
+                    var WC = "";
+
+
+                    if (checkedL == true && checkedS == false) {
+                        L = 1;
+                        S = 200;
+                    }
+                    else if (checkedL == false && checkedS == true) {
+                        S = 2;
+                        L = 200;
+                    }
+
+                    else if (checkedL == true && checkedS == true) {
+                        L = 1;
+                        S = 2;
+                    }
+                    else {
+                        L = 200;
+                        S = 200;
+                    };
+
+
+                    if (checkedT == true && checkedF == false) {
+                        T = 3;
+                        F = 200;
+                    }
+                    else if (checkedT == false && checkedF == true) {
+                        F = 4;
+                        T = 200;
+                    }
+                    else if (checkedT == true && checkedF == true) {
+                        T = 3;
+                        F = 4;
+                    }
+                    else {
+                        T = 200;
+                        F = 200;
+                    };
+
+
+                    if (checkedCH == true && checkedWB == false) {
+                        CH = 7;
+                        WB = 200;
+                    }
+                    else if (checkedCH == false && checkedWB == true) {
+                        WB = 8;
+                        CH = 200;
+                    }
+                    else if (checkedCH == true && checkedWB == true) {
+                        CH = 7;
+                        WB = 8;
+                    }
+                    else {
+                        CH = 200;
+                        WB = 200;
+                    };
+
+
+                    if (checkedDP == true && checkedDP2 == false) {
+                        DP = 5;
+                        DP2 = 200;
+                    }
+                    else if (checkedDP == false && checkedDP2 == true) {
+                        DP2 = 11;
+                        DP = 200;
+                    }
+                    else if (checkedDP == true && checkedDP2 == true) {
+                        DP = 5;
+                        DP2 = 11;
+                    }
+                    else {
+                        DP = 200;
+                        DP2 = 200;
+                    };
+
+
+                    if (checkedWC == true) {
+                        WC = 10;
+                    }
+                    else {
+                        WC = 200;
+                    };
+
+
+                    if (checkedOHP == true) {
+                        OHP = 6;
+                    }
+                    else {
+                        OHP = 200;
+                    };
+
+
+                    if (checkedLB == true) {
+                        LB = 9;
+                    }
+                    else {
+                        LB = 200;
+                    };
+
                     $.ajax({
                         type: "POST",
                         contentType: "application/json; charset=utf8",
                         url: "AutoCompleteRooms.asmx/GetAutoCompleteRooms",
-                        data: "{'modName':'" + document.getElementById('tags1').value + "', 'MinCapacity':'" + Number($(".MinCapacity").val()) + "', 'park1':'" + Number(park1) + "', 'park2':'" + Number(park2) + "', 'park3':'" + Number(park3) + "'}",
+                        data: "{'roomName':'" + document.getElementById('tags1').value + "', 'MinCapacity':'" + Number($(".MinCapacity").val()) +
+                            "', 'park1':'" + Number(park1) + "', 'park2':'" + Number(park2) + "', 'park3':'" + Number(park3) + "', 'OHP':'" + OHP + "', 'DP':'" + DP +
+                            "', 'DP2':'" + DP2 + "', 'Chalk':'" + CH + "', 'WhiteBoard':'" + WB + "', 'LargeBoard':'" + LB + "', 'Lecture':'" + L + "', 'Seminar':'" + S +
+                            "', 'Tiered':'" + T + "', 'Flat':'" + F + "', 'Wheelchair':'" + WC + "'}",
                         dataType: "json",
                         success: function (data) {
-                            response(data.d);
+                            var results = $.ui.autocomplete.filter(data.d, request.term);
+                            if (!results.length) {
+                                results = [NoResultsText];
+                            }
+                            response(results);
                         },
+
                         error: function (result) {
                             alert("Error");
                         }
                     });
                 }
             });
+
+            $("#tags1").bind("autocompleteselect", function (event, ui) {
+                if (ui.item.label === NoResultsText) {
+                    return false;
+                };
+            })
+
+            $("#tags1").bind("autocompletefocus", function (event, ui) {
+                if (ui.item.label === NoResultsText) {
+                    return false;
+                };
+            })
         };
   </script>
 </head>

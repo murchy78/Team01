@@ -26,35 +26,97 @@ namespace WebApplication2
             return "Hello World";
         }
          [WebMethod]
-        public List<string> GetAutoCompleteRooms(string modName, int MinCapacity, int park1, int park2, int park3)
+        public List<string> GetAutoCompleteRooms(string roomName, int MinCapacity, int park1, int park2, int park3, int OHP, int DP, int DP2, int Chalk, int WhiteBoard, int LargeBoard, int Lecture, int Seminar, int Tiered, int Flat, int Wheelchair)
         {
 
           
             List<string> result = new List<string>();
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["team01Database"].ConnectionString);
             conn.Open();
-            string request = "SELECT * FROM dbo.Rooms inner join dbo.Buildings on dbo.Rooms.BuildingID = dbo.Buildings.BuildingID WHERE (RoomCode LIKE '%'+@SearchText+'%' OR BuildingName LIKE '%'+@SearchText+'%') AND (ParkID = @park1 OR ParkID = @park2 OR ParkID = @park3) AND Capacity >= @MinCapacity;";
+            string request = "SELECT * FROM dbo.Rooms inner join dbo.Buildings on dbo.Rooms.BuildingID = dbo.Buildings.BuildingID";
+            request += " WHERE (RoomCode LIKE '%'+@SearchText+'%' OR BuildingName LIKE '%'+@SearchText+'%') AND (ParkID = @park1 OR ParkID = @park2 OR ParkID = @park3)";
+
+            if (Lecture != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @Lecture)";
+            }
+
+            if (Seminar != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @Seminar)";
+            }
+
+            if (Tiered != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @Tiered)";
+            }
+
+            if (Flat != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @Flat)";
+            }
+
+            if (DP != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @DP)";
+            }
+
+            if (DP2 != 200) 
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @DP2)";
+            }
+
+            if (Chalk != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @Chalk)";
+            }
+
+            if (WhiteBoard != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @WhiteBoard)";
+            }
+
+            if (OHP != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @OHP)";
+            }
+
+            if (LargeBoard != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @LargeBoard)";
+            }
+
+            if (Wheelchair != 200)
+            {
+                request += " AND RoomId IN (SELECT DISTINCT RoomID FROM dbo.RoomsFacilities WHERE FacilityID = @Wheelchair)";
+            }
+
+            request += " AND Capacity >= @MinCapacity ORDER BY RoomCode ASC;";
    
             SqlCommand com = new SqlCommand(request, conn);
 
-            com.Parameters.AddWithValue("@SearchText", modName);
+            com.Parameters.AddWithValue("@SearchText", roomName);
             com.Parameters.AddWithValue("@MinCapacity", MinCapacity);
             com.Parameters.AddWithValue("@park1", park1);
             com.Parameters.AddWithValue("@park2", park2);
             com.Parameters.AddWithValue("@park3", park3);
+            com.Parameters.AddWithValue("@OHP", OHP);
+            com.Parameters.AddWithValue("@DP", DP);
+            com.Parameters.AddWithValue("@DP2", DP2);
+            com.Parameters.AddWithValue("@Chalk", Chalk);
+            com.Parameters.AddWithValue("@WhiteBoard", WhiteBoard);
+            com.Parameters.AddWithValue("@LargeBoard", LargeBoard);
+            com.Parameters.AddWithValue("@Lecture", Lecture);
+            com.Parameters.AddWithValue("@Seminar", Seminar);
+            com.Parameters.AddWithValue("@Tiered", Tiered);
+            com.Parameters.AddWithValue("@Flat", Flat);
+            com.Parameters.AddWithValue("@Wheelchair", Wheelchair);
 
             SqlDataReader RoomList = com.ExecuteReader();
 
             while (RoomList.Read())
             {
-                if (RoomList.HasRows)
-                {
-                    result.Add(RoomList["RoomCode"].ToString() + " - " + RoomList["BuildingName"].ToString());
-                }
-                else
-                {
-                    result.Add("No Results Found");
-                }
+                result.Add(RoomList["RoomCode"].ToString().Trim() + " - " + RoomList["BuildingName"].ToString().Trim());
             }
             return result;
         }

@@ -13,7 +13,7 @@
         <asp:TextBox ID="TextBox_ModTitle" placeholder="Module Title" runat="server"></asp:TextBox>
         <asp:Button ID="AddMod" OnClick="AddMod_Click" runat="server" Text="Add" />
         <h1>Edit Modules</h1>
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ModuleID" DataSourceID="SqlDataSource1" AllowPaging="True">
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ModuleID" DataSourceID="SqlDataSource1">
             <Columns>
                 <asp:BoundField DataField="ModuleCode" HeaderText="Module Code" SortExpression="ModuleCode" />
                 <asp:BoundField DataField="ModuleTitle" HeaderText="Module Title" SortExpression="ModuleTitle" />
