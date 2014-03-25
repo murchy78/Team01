@@ -18,8 +18,8 @@
             <asp:TableCell>Module Search</asp:TableCell>
             <asp:TableCell>Room Capacity</asp:TableCell>
         </asp:TableRow>
-        <asp:TableRow height="100px"><asp:TableCell CssClass="display-cell"> <label for="tags">Tags: </label>
-  <input id="tags"/> </asp:TableCell>
+        <asp:TableRow height="100px"><asp:TableCell CssClass="display-cell"> <label for="ModCode">Module Code </label>
+  <input id="ModCode"/> </asp:TableCell>
             
             <asp:TableCell CssClass="display-cell"><asp:TextBox placeholder="Enter Minimum Capacity" ID="MinCapacity" class="MinCapacity" runat="server"></asp:TextBox></asp:TableCell>
 
@@ -90,10 +90,15 @@
                 <asp:TableRow Height="100px">
                     <asp:TableCell><label for="tags">Tags: </label>  <input id="tags1"/></asp:TableCell>
                     <asp:TableCell>   
-                        <asp:Button ID="Button1" runat="server" CssClass="button" Width="120px" Text="Add Room" />
+                        <input type="button" class="button" id="AddRoom" value="Add Room" onclick="AddSelRoom();" />
                         <br />
-                           <asp:Button ID="Button2" runat="server" CssClass="button" Width="120px" Text="Remove Room" />
-                         </asp:TableCell>
+                        <input type="button" class="button" id="RemoveRoom" value="Remove Room" onclick="RemoveSelRoom();" />
+                     </asp:TableCell>
+                    <asp:TableCell>
+                        <div id="RoomSel">
+                            <select id="SelectedRooms" size="5"></select>
+                        </div>
+                    </asp:TableCell>
                       
                         
 
@@ -145,33 +150,33 @@
                
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK1" runat="server" /></asp:TableCell>                
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK2" runat="server" /></asp:TableCell>                
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK3" runat="server" /></asp:TableCell>                
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK4" runat="server" /></asp:TableCell>     
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK5" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK6" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK7" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK8" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK9" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK10" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK11" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK12" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK13" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK14" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWK15" runat="server" /></asp:TableCell>           
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWKA12" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWKA13" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWKO" runat="server" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxWKE" runat="server" /></asp:TableCell>
+                   <asp:TableCell><input id="WeekCheckBox1" type="checkbox" /></asp:TableCell>                
+                <asp:TableCell><input id="WeekCheckBox2" type="checkbox" /></asp:TableCell>                
+                <asp:TableCell><input id="WeekCheckBox3" type="checkbox" /></asp:TableCell>                
+                <asp:TableCell><input id="WeekCheckBox4" type="checkbox" /></asp:TableCell>     
+                <asp:TableCell><input id="WeekCheckBox5" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox6" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox7" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox8" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox9" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox10" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox11" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox12" type="checkbox" /></asp:TableCell>
+                 <asp:TableCell><input id="WeekCheckBox13" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox14" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox15" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBoxAll1-12" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox1All1-15" type="checkbox" /></asp:TableCell>
+                <asp:TableCell><input id="WeekCheckBox1Odd" type="checkbox" /></asp:TableCell>           
+                <asp:TableCell><input id="WeekCheckBox1Even" type="checkbox" /></asp:TableCell>
 
 
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="18">
-                    <asp:Button ID="Button4" runat="server" CssClass="button" Text="Clear All Week(s)" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxSem1" runat="server" Text="Semester 1" /></asp:TableCell>
-                <asp:TableCell><asp:CheckBox ID="CheckBoxSem2" runat="server" Text="Semester 2"/></asp:TableCell>
+                   <button type ="button" onclick="ClearAllWeeks()">Clear All Weeks</button></asp:TableCell>
+                <asp:TableCell><input id="Semester1" type="checkbox" />Semester 1</asp:TableCell>
+                <asp:TableCell><input id="Semester2" type="checkbox" />Semester 2</asp:TableCell>
             </asp:TableRow>
         </asp:Table>
             <br />
@@ -193,15 +198,15 @@
                 <asp:TableRow>
                     <asp:TableCell CssClass="sub-heading" >All</asp:TableCell>
                     <asp:TableCell></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA1" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA2" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA3" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA4" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA5" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA6" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA7" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA8" runat="server" /></asp:TableCell>
-                    <asp:TableCell><asp:CheckBox ID="CheckBoxA9" runat="server" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA1" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA2" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA3" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA4" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA5" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA6" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA7" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA8" type="checkbox" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxA9" type="checkbox" /></asp:TableCell>
 
                 
 
@@ -209,79 +214,95 @@
                  <asp:TableRow>
                     <asp:TableCell CssClass="sub-heading" >Monday</asp:TableCell>
 
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM1" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM2" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM3" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM4" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM5" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM6" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM7" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM8" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM9" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxM10" runat="server" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM1" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM2" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM3" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM4" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM5" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM6" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM7" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM8" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM9" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxM10" type="checkbox" /></asp:TableCell>
                 </asp:TableRow>
                  <asp:TableRow>
                     <asp:TableCell CssClass="sub-heading" >Tuesday</asp:TableCell>
                      
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT1" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT2" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT3" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT4" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT5" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT6" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT7" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT8" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT9" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBoxT10" runat="server" /></asp:TableCell>
+                   <asp:TableCell><input id="CheckBoxT1" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT2" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT3" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT4" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT5" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT6" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT7" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT8" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT9" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxT10" type="checkbox" /></asp:TableCell>
                 </asp:TableRow>
                  <asp:TableRow>
                     <asp:TableCell CssClass="sub-heading" >Wednesday</asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox32" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox33" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox34" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox35" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox36" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox37" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox38" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox39" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox40" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox41" runat="server" /></asp:TableCell>
+                  <asp:TableCell><input id="CheckBoxW1" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW2" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW3" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW4" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW5" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW6" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW7" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW8" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW9" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxW10" type="checkbox" /></asp:TableCell>
 
                 </asp:TableRow>
                  <asp:TableRow>
                     <asp:TableCell CssClass="sub-heading" >Thursday</asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox42" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox43" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox44" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox45" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox46" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox47" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox48" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox49" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox50" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox51" runat="server" /></asp:TableCell>
+                    <asp:TableCell><input id="CheckBoxTH1" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH2" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH3" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH4" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH5" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH6" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH7" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH8" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH9" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxTH10" type="checkbox" /></asp:TableCell>
 
                 </asp:TableRow>
                  <asp:TableRow>
                     <asp:TableCell CssClass="sub-heading" >Friday</asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox52" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox53" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox54" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox55" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox56" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox57" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox58" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox59" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox60" runat="server" /></asp:TableCell>
-                     <asp:TableCell><asp:CheckBox ID="CheckBox61" runat="server" /></asp:TableCell>
+                      <asp:TableCell><input id="CheckBoxF1" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF2" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF3" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF4" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF5" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF6" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF7" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF8" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF9" type="checkbox" /></asp:TableCell>
+                     <asp:TableCell><input id="CheckBoxF10" type="checkbox" /></asp:TableCell>
 
                 </asp:TableRow>
                 <asp:TableRow><asp:TableCell ColumnSpan="12">
-                    <asp:Button ID="clearDay_button" runat="server" CssClass="button" width="210px" Text="Clear All Day(s) and Period(s)" /></asp:TableCell></asp:TableRow>
+                   <button type ="button" onclick="ClearAllDays()">Clear All Days and Periods</button>
+                    <button type ="button" onclick="AddSelectedTimeSlot()">Add Selected Time Slots</button>
+                     <button type ="button" onclick="DeleteSelectedTimeSlot()">delete Selected Time Slots</button>
+                              </asp:TableCell>
+
+                    <asp:TableCell ></asp:TableCell>
+
+
+                </asp:TableRow>
+                <asp:TableRow >
+                    <asp:TableCell  ColumnSpan="12" >
+                        <select id="AddSelectedTimeSlotArea" size="5" >&nbsp;</select>
+                      </asp:TableCell>
+
+                </asp:TableRow>
                 <asp:TableRow><asp:TableCell CssClass="sub-heading" ColumnSpan="12">Please enter any special requests you have: </asp:TableCell></asp:TableRow>
-                <asp:TableRow><asp:TableCell ColumnSpan="12" ><asp:TextBox ID="specialRequest_TB" width="500px" height="100px" runat="server"></asp:TextBox></asp:TableCell></asp:TableRow>
-            <asp:TableRow><asp:TableCell ColumnSpan="12">
-                <asp:Button runat="server" CssClass="button" Text="Clear All" />
+                <asp:TableRow><asp:TableCell><textarea id="specialRequest_TB" rows="2" cols="20"></textarea></asp:TableCell></asp:TableRow>
+            <asp:TableRow><asp:tablecell>  <button type ="button" onclick ="ClearSpecialRequirements()">Clear Special Requirements</button></asp:tablecell></asp:TableRow>
+                
+                <asp:TableRow><asp:TableCell ColumnSpan="12">
+                  <button type ="button" onclick="ClearAll()">Clear All</button>
                 <asp:Button runat="server" CssClass="button" Text="Submit" /></asp:TableCell>
             </asp:TableRow>
             </asp:Table>

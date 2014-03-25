@@ -81,9 +81,333 @@
         $(document).ready(function () {
             SearchText();
             SearchText2();
-
+            $("#RoomSel").hide();
         });
+        function ClearAll() {
+            document.getElementById("specialRequest_TB").value = "";
+            document.getElementById("ModCode").value = "";
+            document.getElementById("ContentPlaceHolder1_MinCapacity").value = "";
+            $("#SelectedRooms").empty();
+            $("#RoomSel").hide();
 
+
+            var element = document.getElementById("AddSelectedTimeSlotArea");
+            var elementLength = element.length;
+            for (var j = 0; j < elementLength; j++) {
+              
+  element.remove(element[j]);
+  
+            }
+           
+            
+            $("#CheckBoxA1").removeAttr('checked');
+            $("#CheckBoxA2").removeAttr('checked');
+            $("#CheckBoxA3").removeAttr('checked');
+            $("#CheckBoxA4").removeAttr('checked');
+            $("#CheckBoxA5").removeAttr('checked');
+            $("#CheckBoxA6").removeAttr('checked');
+            $("#CheckBoxA7").removeAttr('checked');
+            $("#CheckBoxA8").removeAttr('checked');
+            $("#CheckBoxA9").removeAttr('checked');
+            $("#CheckBoxM1").removeAttr('checked');
+            $("#CheckBoxM2").removeAttr('checked');
+            $("#CheckBoxM3").removeAttr('checked');
+            $("#CheckBoxM4").removeAttr('checked');
+            $("#CheckBoxM5").removeAttr('checked');
+            $("#CheckBoxM6").removeAttr('checked');
+            $("#CheckBoxM7").removeAttr('checked');
+            $("#CheckBoxM8").removeAttr('checked');
+            $("#CheckBoxM9").removeAttr('checked');
+            $("#CheckBoxM10").removeAttr('checked');
+            $("#CheckBoxT1").removeAttr('checked');
+            $("#CheckBoxT2").removeAttr('checked');
+            $("#CheckBoxT3").removeAttr('checked');
+            $("#CheckBoxT4").removeAttr('checked');
+            $("#CheckBoxT5").removeAttr('checked');
+            $("#CheckBoxT6").removeAttr('checked');
+            $("#CheckBoxT7").removeAttr('checked');
+            $("#CheckBoxT8").removeAttr('checked');
+            $("#CheckBoxT9").removeAttr('checked');
+            $("#CheckBoxW10").removeAttr('checked');
+            $("#CheckBoxW1").removeAttr('checked');
+            $("#CheckBoxW2").removeAttr('checked');
+            $("#CheckBoxW3").removeAttr('checked');
+            $("#CheckBoxW4").removeAttr('checked');
+            $("#CheckBoxW5").removeAttr('checked');
+            $("#CheckBoxW6").removeAttr('checked');
+            $("#CheckBoxW7").removeAttr('checked');
+            $("#CheckBoxW8").removeAttr('checked');
+            $("#CheckBoxW9").removeAttr('checked');
+            $("#CheckBoxW10").removeAttr('checked');
+            $("#CheckBoxTH1").removeAttr('checked');
+            $("#CheckBoxTH2").removeAttr('checked');
+            $("#CheckBoxTH3").removeAttr('checked');
+            $("#CheckBoxTH4").removeAttr('checked');
+            $("#CheckBoxTH5").removeAttr('checked');
+            $("#CheckBoxTH6").removeAttr('checked');
+            $("#CheckBoxTH7").removeAttr('checked');
+            $("#CheckBoxTH8").removeAttr('checked');
+            $("#CheckBoxTH9").removeAttr('checked');
+            $("#CheckBoxTH10").removeAttr('checked');
+            $("#CheckBoxF1").removeAttr('checked');
+            $("#CheckBoxF2").removeAttr('checked');
+            $("#CheckBoxF3").removeAttr('checked');
+            $("#CheckBoxF4").removeAttr('checked');
+            $("#CheckBoxF5").removeAttr('checked');
+            $("#CheckBoxF6").removeAttr('checked');
+            $("#CheckBoxF7").removeAttr('checked');
+            $("#CheckBoxF8").removeAttr('checked');
+            $("#CheckBoxF9").removeAttr('checked');
+            $("#CheckBoxF10").removeAttr('checked');
+
+
+
+
+            $("#WeekCheckBox1").removeAttr('checked');
+            $("#WeekCheckBox2").removeAttr('checked');
+            $("#WeekCheckBox3").removeAttr('checked');
+            $("#WeekCheckBox4").removeAttr('checked');
+            $("#WeekCheckBox5").removeAttr('checked');
+            $("#WeekCheckBox6").removeAttr('checked');
+            $("#WeekCheckBox7").removeAttr('checked');
+            $("#WeekCheckBox8").removeAttr('checked');
+            $("#WeekCheckBox9").removeAttr('checked');
+            $("#WeekCheckBox10").removeAttr('checked');
+            $("#WeekCheckBox11").removeAttr('checked');
+            $("#WeekCheckBox12").removeAttr('checked');
+            $("#WeekCheckBox13").removeAttr('checked');
+            $("#WeekCheckBox14").removeAttr('checked');
+            $("#WeekCheckBox15").removeAttr('checked');
+            $("#WeekCheckBoxAll1-12").removeAttr('checked');
+            $("#WeekCheckBox1All1-15").removeAttr('checked');
+            $("#WeekCheckBox1Odd").removeAttr('checked');
+            $("#WeekCheckBox1Even").removeAttr('checked');
+
+        }
+        function ClearSpecialRequirements() {
+
+            document.getElementById("specialRequest_TB").value = "";
+        }
+        function ClearAllDays() {
+            $("#CheckBoxA1").removeAttr('checked');
+            $("#CheckBoxA2").removeAttr('checked');
+            $("#CheckBoxA3").removeAttr('checked');
+            $("#CheckBoxA4").removeAttr('checked');
+            $("#CheckBoxA5").removeAttr('checked');
+            $("#CheckBoxA6").removeAttr('checked');
+            $("#CheckBoxA7").removeAttr('checked');
+            $("#CheckBoxA8").removeAttr('checked');
+            $("#CheckBoxA9").removeAttr('checked');
+            $("#CheckBoxM1").removeAttr('checked');
+            $("#CheckBoxM2").removeAttr('checked');
+            $("#CheckBoxM3").removeAttr('checked');
+            $("#CheckBoxM4").removeAttr('checked');
+            $("#CheckBoxM5").removeAttr('checked');
+            $("#CheckBoxM6").removeAttr('checked');
+            $("#CheckBoxM7").removeAttr('checked');
+            $("#CheckBoxM8").removeAttr('checked');
+            $("#CheckBoxM9").removeAttr('checked');
+            $("#CheckBoxM10").removeAttr('checked');
+            $("#CheckBoxT1").removeAttr('checked');
+            $("#CheckBoxT2").removeAttr('checked');
+            $("#CheckBoxT3").removeAttr('checked');
+            $("#CheckBoxT4").removeAttr('checked');
+            $("#CheckBoxT5").removeAttr('checked');
+            $("#CheckBoxT6").removeAttr('checked');
+            $("#CheckBoxT7").removeAttr('checked');
+            $("#CheckBoxT8").removeAttr('checked');
+            $("#CheckBoxT9").removeAttr('checked');
+            $("#CheckBoxW10").removeAttr('checked');
+            $("#CheckBoxW1").removeAttr('checked');
+            $("#CheckBoxW2").removeAttr('checked');
+            $("#CheckBoxW3").removeAttr('checked');
+            $("#CheckBoxW4").removeAttr('checked');
+            $("#CheckBoxW5").removeAttr('checked');
+            $("#CheckBoxW6").removeAttr('checked');
+            $("#CheckBoxW7").removeAttr('checked');
+            $("#CheckBoxW8").removeAttr('checked');
+            $("#CheckBoxW9").removeAttr('checked');
+            $("#CheckBoxW10").removeAttr('checked');
+            $("#CheckBoxTH1").removeAttr('checked');
+            $("#CheckBoxTH2").removeAttr('checked');
+            $("#CheckBoxTH3").removeAttr('checked');
+            $("#CheckBoxTH4").removeAttr('checked');
+            $("#CheckBoxTH5").removeAttr('checked');
+            $("#CheckBoxTH6").removeAttr('checked');
+            $("#CheckBoxTH7").removeAttr('checked');
+            $("#CheckBoxTH8").removeAttr('checked');
+            $("#CheckBoxTH9").removeAttr('checked');
+            $("#CheckBoxTH10").removeAttr('checked');
+            $("#CheckBoxF1").removeAttr('checked');
+            $("#CheckBoxF2").removeAttr('checked');
+            $("#CheckBoxF3").removeAttr('checked');
+            $("#CheckBoxF4").removeAttr('checked');
+            $("#CheckBoxF5").removeAttr('checked');
+            $("#CheckBoxF6").removeAttr('checked');
+            $("#CheckBoxF7").removeAttr('checked');
+            $("#CheckBoxF8").removeAttr('checked');
+            $("#CheckBoxF9").removeAttr('checked');
+            $("#CheckBoxF10").removeAttr('checked');
+            
+        }
+
+        function ClearAllWeeks() {
+
+
+
+            $("#WeekCheckBox1").removeAttr('checked');
+            $("#WeekCheckBox2").removeAttr('checked');
+            $("#WeekCheckBox3").removeAttr('checked');
+            $("#WeekCheckBox4").removeAttr('checked');
+            $("#WeekCheckBox5").removeAttr('checked');
+            $("#WeekCheckBox6").removeAttr('checked');
+            $("#WeekCheckBox7").removeAttr('checked');
+            $("#WeekCheckBox8").removeAttr('checked');
+            $("#WeekCheckBox9").removeAttr('checked');
+            $("#WeekCheckBox10").removeAttr('checked');
+            $("#WeekCheckBox11").removeAttr('checked');
+            $("#WeekCheckBox12").removeAttr('checked');
+            $("#WeekCheckBox13").removeAttr('checked');
+            $("#WeekCheckBox14").removeAttr('checked');
+            $("#WeekCheckBox15").removeAttr('checked');
+            $("#WeekCheckBoxAll1-12").removeAttr('checked');
+            $("#WeekCheckBox1All1-15").removeAttr('checked');
+            $("#WeekCheckBox1Odd").removeAttr('checked');
+            $("#WeekCheckBox1Even").removeAttr('checked');
+        }
+ 
+        function DeleteSelectedTimeSlot() {
+
+            var element = document.getElementById("AddSelectedTimeSlotArea");
+            var strUser = element.options[element.selectedIndex].text;
+          
+
+            element.remove(element.selectedIndex);
+           
+
+        }
+        function AddSelectedTimeSlot() {
+            var week1 = $("#WeekCheckBox1").is(":checked");
+            var week2 = $("#WeekCheckBox2").is(":checked");
+            var week3 = $("#WeekCheckBox3").is(":checked");
+            var week4 = $("#WeekCheckBox4").is(":checked");
+            var week5 = $("#WeekCheckBox5").is(":checked");
+            var week6 = $("#WeekCheckBox6").is(":checked");
+            var week7 = $("#WeekCheckBox7").is(":checked");
+            var week8 = $("#WeekCheckBox8").is(":checked");
+            var week9 = $("#WeekCheckBox9").is(":checked");
+            var week10 = $("#WeekCheckBox10").is(":checked");
+            var week11 = $("#WeekCheckBox11").is(":checked");
+            var week12 = $("#WeekCheckBox12").is(":checked");
+            var week13 = $("#WeekCheckBox13").is(":checked");
+            var week14 = $("#WeekCheckBox14").is(":checked");
+            var week15 = $("#WeekCheckBox15").is(":checked");
+            var weeks = document.getElementById("AddSelectedTimeSlotArea");
+            var week = "";
+            var Weeks = "Semesters Added: "
+
+
+
+            for (var j = 1; j <= 2; j++) {
+
+                if ($("#Semester" + j.toString()).is(":checked")) {
+                    Weeks = Weeks + j.toString() + " ";
+
+                }
+            };
+            Weeks = Weeks + "Weeks Added: ";
+
+
+
+
+
+            for (var j = 1; j <= 15; j++) {
+
+                if ($("#WeekCheckBox" + j.toString()).is(":checked")) {
+                    Weeks = Weeks + j.toString() + " ";
+
+                }
+            };
+            Weeks = Weeks + "Periods Added: ";
+            for (var j = 1; j <= 10; j++) {
+
+                if ($("#CheckBoxM" + j.toString()).is(":checked")) {
+                    var i = j
+                    i = i - 1
+                    Weeks = Weeks + "Mon " + i.toString() + " ";
+
+                }
+            };
+            for (var j = 1; j <= 10; j++) {
+
+                if ($("#CheckBoxT" + j.toString()).is(":checked")) {
+                    var i = j
+                    i = i - 1
+                    Weeks = Weeks + "Tues " + i.toString() + " ";
+
+                }
+            };
+            for (var j = 1; j <= 10; j++) {
+
+                if ($("#CheckBoxW" + j.toString()).is(":checked")) {
+                    var i = j
+                    i = i - 1
+                    Weeks = Weeks + "Wed " + i.toString() + " ";
+
+                }
+            };
+            for (var j = 1; j <= 10; j++) {
+
+                if ($("#CheckBoxTH" + j.toString()).is(":checked")) {
+                    var i = j
+                    i = i - 1
+                    Weeks = Weeks + "Thurs " + i.toString() + " ";
+
+                }
+            };
+            for (var j = 1; j <= 10; j++) {
+
+                if ($("#CheckBoxF" + j.toString()).is(":checked")) {
+                    var i = j
+                    i = i - 1
+                    Weeks = Weeks + "Fri " + i.toString() + " ";
+
+                }
+            };
+            
+
+
+
+                week = document.createElement("option");
+                week.innerHTML = Weeks;
+                weeks.appendChild(week);
+               
+
+     
+           
+        }
+
+        function AddSelRoom() {
+            var selRooms = document.getElementById("SelectedRooms");
+            var roomSearchVal = document.getElementById("tags1").value;
+            if (roomSearchVal != "") {
+                var room = document.createElement("option");
+                room.innerHTML = roomSearchVal;
+                selRooms.appendChild(room);
+                $("#RoomSel").show();
+            };
+        };
+
+        function RemoveSelRoom() {
+            var selRooms = document.getElementById("SelectedRooms");
+            if (selRooms.selectedIndex == false) {
+                selRooms.remove(selRooms.selectedIndex);
+            };
+            if (document.getElementById("SelectedRooms").childElementCount == 0) {
+                $("#RoomSel").hide();
+            };
+        };
+        
         function SearchText() {
             /*var availableTags = [
               "ActionScript",
